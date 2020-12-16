@@ -47,10 +47,11 @@ class Login_layout : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Login in success, update UI with the signed-in user's information
-                    progressBar.visibility = View.INVISIBLE
+                   
                     Toast.makeText(applicationContext,"User Login successfull",Toast.LENGTH_LONG).show()
                     val user = auth.currentUser
                     updateUI(user)
+                    progressBar.visibility = View.INVISIBLE
                 } else {
 
                     // If Login in fails, display a message to the user.
