@@ -1,4 +1,4 @@
-package com.example.yetlibla
+package com.example.yetlibla.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,11 +7,10 @@ import android.view.View
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
+import com.example.yetlibla.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import kotlinx.android.synthetic.main.activity_login_layout.*
 import kotlinx.android.synthetic.main.activity_register.*
-import kotlinx.android.synthetic.main.activity_register.FULLNAME
 import kotlinx.android.synthetic.main.activity_register.inputPassword
 
 class register : AppCompatActivity() {
@@ -29,7 +28,8 @@ class register : AppCompatActivity() {
             progressBar.visibility = View.VISIBLE
 
         }
-        gotoLogin.setOnClickListener {  startActivity(Intent(this,Login_layout::class.java)) }
+        gotoLogin.setOnClickListener {  startActivity(Intent(this,
+            Login_layout::class.java)) }
 
     }
     public override fun onStart() {
@@ -40,7 +40,7 @@ class register : AppCompatActivity() {
     }
     fun updateUI(currentUser: FirebaseUser?) {
         if(currentUser!=null)
-            startActivity(Intent(this,Homepage::class.java))
+            startActivity(Intent(this, Homepage::class.java))
     }
     private fun signup(){
         auth.createUserWithEmailAndPassword(inputemail.text.toString(), inputPassword.text.toString())

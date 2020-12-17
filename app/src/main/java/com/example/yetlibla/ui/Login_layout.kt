@@ -1,13 +1,13 @@
-package com.example.yetlibla
+package com.example.yetlibla.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
+import com.example.yetlibla.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_login_layout.*
@@ -24,7 +24,8 @@ class Login_layout : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         val progressBar = findViewById<ProgressBar>(R.id.progressBar2)
         val gotoregister = findViewById(R.id.gotoRegister) as TextView
-        gotoregister.setOnClickListener {  startActivity(Intent(this,register::class.java)) }
+        gotoregister.setOnClickListener {  startActivity(Intent(this,
+            register::class.java)) }
         btnLogin.setOnClickListener { login()
             progressBar.visibility = View.VISIBLE} }
 
@@ -37,7 +38,7 @@ class Login_layout : AppCompatActivity() {
 
     fun updateUI(currentUser: FirebaseUser?) {
                 if(currentUser!=null)
-                    startActivity(Intent(this,Homepage::class.java))
+                    startActivity(Intent(this, Homepage::class.java))
     }
 
     private fun login(){
