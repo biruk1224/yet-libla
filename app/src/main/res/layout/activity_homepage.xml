@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
-        <EditText
+        <TextView
             android:layout_margin="10dp"
             android:id="@+id/textView4"
             android:layout_width="match_parent"
@@ -31,7 +31,7 @@
             android:drawableEnd="@drawable/ic_baseline_search_24"
             android:drawableRight="@drawable/ic_baseline_search_24">
 
-        </EditText>
+        </TextView>
 
         <TextView
             android:background="#E0FFFF"

@@ -81,8 +81,8 @@ class Homepage : AppCompatActivity() {
     }
 
     fun onClick(view: View) {
-        Toast.makeText(applicationContext,"successfull", Toast.LENGTH_LONG).show()
-        startActivity(Intent(this, Rating::class.java))
+       // Toast.makeText(applicationContext,"successfull", Toast.LENGTH_LONG).show()
+        startActivity(Intent(this,search::class.java))
 
     }
 }

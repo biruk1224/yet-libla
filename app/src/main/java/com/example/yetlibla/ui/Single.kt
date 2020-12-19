@@ -28,9 +28,10 @@ class Single : AppCompatActivity() {
             lng = 38.7781442
         }
         location.setOnClickListener {
-            val intent = Intent(this,foods::class.java)
+            val intent = Intent(this,Location::class.java)
             intent.putExtra("lat",lat)
             intent.putExtra("lng",lng)
+            startActivity(intent)
 
         }
 
