@@ -20,7 +20,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class Homepage : AppCompatActivity() {
-    private var rating = mutableListOf<String>()
+    private var names = mutableListOf<String>()
     private var pics = mutableListOf<Int>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,21 +37,21 @@ class Homepage : AppCompatActivity() {
         posttolist()
      //   val recyclerView = findViewById<RecyclerView>(R.id.list)
         list.layoutManager = LinearLayoutManager(this)
-        list.adapter = ImagesAdapter(rating,pics)
+        list.adapter = ImagesAdapter(names,pics)
        // recyclerView.setHasFixedSize(true)
       //  recyclerView.adapter = ImageAdapter(this,images)
 
 
 
     }
-    private fun addtolist(ratinglist:String,picslist:Int){
-        rating.add(ratinglist)
+    private fun addtolist(namelist:String,picslist:Int){
+        names.add(namelist)
         pics.add((picslist))
     }
     private fun posttolist(){
-        addtolist("5",R.drawable.c)
-        addtolist("4",R.drawable.w)
-        val i = Intent(this@Homepage,Login_layout::class.java)
+        addtolist("Beyayinet",R.drawable.beya)
+        addtolist("Black foarst",R.drawable.donat)
+        addtolist("Shiro",R.drawable.shiro)
 
     }
     private fun fetchMovies(){
@@ -82,7 +82,7 @@ class Homepage : AppCompatActivity() {
 
     fun onClick(view: View) {
         Toast.makeText(applicationContext,"successfull", Toast.LENGTH_LONG).show()
-        startActivity(Intent(this, search::class.java))
+        startActivity(Intent(this, Rating::class.java))
 
     }
 }

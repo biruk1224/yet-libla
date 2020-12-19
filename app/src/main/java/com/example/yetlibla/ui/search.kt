@@ -5,23 +5,32 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.yetlibla.Adapters.ImageAdapter
+import com.example.yetlibla.Adapters.ImagesAdapter
 import com.example.yetlibla.R
 import com.example.yetlibla.models.Images
+import kotlinx.android.synthetic.main.activity_foods.*
+import kotlinx.android.synthetic.main.activity_search.*
 
 class search : AppCompatActivity() {
+    private var names = mutableListOf<String>()
+    private var pics = mutableListOf<Int>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
-        val images = listOf<Images>(
-            Images(R.drawable.c),
-            Images(R.drawable.d),
-            Images(R.drawable.a),
-            Images(R.drawable.w)
-        )
-        val recyclerView = findViewById<RecyclerView>(R.id.lists)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.setHasFixedSize(true)
-        recyclerView.adapter = ImageAdapter(this,images)
+        mamaschicken()
+
+        lists.layoutManager = LinearLayoutManager(this)
+        lists.adapter = ImageAdapter(names,pics)
+
+    }
+    private fun addtolist(namelist:String,picslist:Int){
+        names.add(namelist)
+        pics.add((picslist))
+    }
+    private fun mamaschicken(){
+        addtolist("Natan Restaurant",R.drawable.r)
+        addtolist("Bilos Cafe",R.drawable.r1)
+        addtolist("mamas chicken Restaurant",R.drawable.r2)
 
     }
 }

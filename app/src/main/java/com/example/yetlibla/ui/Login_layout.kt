@@ -27,7 +27,11 @@ class Login_layout : AppCompatActivity() {
         gotoregister.setOnClickListener {  startActivity(Intent(this,
             register::class.java)) }
         btnLogin.setOnClickListener { login()
-            progressBar.visibility = View.VISIBLE} }
+            progressBar.visibility = View.VISIBLE}
+      btnLoginGuest.setOnClickListener { startActivity(Intent(this,
+          search::class.java)) }
+    }
+
 
     public override fun onStart() {
         super.onStart()
@@ -38,7 +42,7 @@ class Login_layout : AppCompatActivity() {
 
     fun updateUI(currentUser: FirebaseUser?) {
                 if(currentUser!=null)
-                    startActivity(Intent(this, Homepage::class.java))
+                    startActivity(Intent(this, search::class.java))
     }
 
     private fun login(){

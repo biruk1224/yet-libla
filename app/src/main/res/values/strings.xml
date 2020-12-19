@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Yetlibila</string>
+    <string name="app_name">Yetlibla</string>
     <string name="Wheretoeat">search here</string>
     <string name="top_icon">TOP ICON</string>
     <string name="email">Email</string>
@@ -16,4 +16,6 @@
         <item>Sample 3</item>
         <item>Sample 4</item>
     </string-array>
+    <string name="title_activity_location">Map</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

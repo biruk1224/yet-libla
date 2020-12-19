@@ -7,24 +7,22 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.compose.ui.unit.Position
 import androidx.recyclerview.widget.RecyclerView
 import com.example.yetlibla.R
-import com.example.yetlibla.ui.Rating
-import com.example.yetlibla.ui.foods
-import com.example.yetlibla.ui.search
-import kotlinx.android.synthetic.main.item_image.view.*
+import com.example.yetlibla.ui.Location
+import com.example.yetlibla.ui.Single
 
-class ImagesAdapter(private var rating:List<String>,private var pics:List<Int>) : RecyclerView.Adapter<ImagesAdapter.ViewHolder>(){
+class ImagesAdapter(private var names:List<String>, private var pics:List<Int>) : RecyclerView.Adapter<ImagesAdapter.ViewHolder>(){
     inner class ViewHolder(itemview:View) : RecyclerView.ViewHolder(itemview){
-        var itemrating: TextView = itemview.findViewById(R.id.rate)
-        var itempic : ImageView =itemview.findViewById(R.id.image)
+        var itemnames: TextView = itemview.findViewById(R.id.rate)
+        var itempic : ImageView =itemview.findViewById(R.id.imageView)
         init {
             itemview.setOnClickListener { View -> val position: Int = adapterPosition
-              //  Toast.makeText(itemview.context,"successfull" +itemrating.text, Toast.LENGTH_LONG).show()
-                val intent = Intent(itemview.context,foods::class.java)
-                    intent.putExtra("restaurent",itemrating.text)
-                itemview.context.startActivity(intent)
+             //  Toast.makeText(itemview.context,"successfull" +itemnames.text + position + adapterPosition, Toast.LENGTH_LONG).show()
+                val intent = Intent(itemview.context, Single::class.java)
+                   intent.putExtra("name",itemnames.text)
+                    intent.putExtra("position",position)
+                     itemview.context.startActivity(intent)
 
 
 
@@ -39,11 +37,11 @@ class ImagesAdapter(private var rating:List<String>,private var pics:List<Int>) 
     }
 
     override fun getItemCount(): Int {
-       return rating.size
+       return names.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.itemrating.text = rating[position]
+        holder.itemnames.text = names[position]
         holder.itempic.setImageResource(pics[position])
 
     }

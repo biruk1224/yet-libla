@@ -1,63 +1,52 @@
 package com.example.yetlibla.Adapters
 
-import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-
 import com.example.yetlibla.R
-import com.example.yetlibla.models.Images
-import com.example.yetlibla.ui.Homepage
-import kotlinx.android.synthetic.main.item_image.view.*
+import com.example.yetlibla.ui.Location
+import com.example.yetlibla.ui.foods
 
-/*
-class ImageAdapter (val images: List<Images>) : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>(){
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
-        return ImageViewHolder( LayoutInflater.from(parent.context).inflate(R.layout.item_image,parent,false)
+class ImageAdapter(private var names:List<String>, private var pics:List<Int>) : RecyclerView.Adapter<ImageAdapter.ViewHolder>(){
+    inner class ViewHolder(itemview:View) : RecyclerView.ViewHolder(itemview){
+        var itemnames: TextView = itemview.findViewById(R.id.rate)
+        var itempic : ImageView =itemview.findViewById(R.id.imageView)
+        init {
+            itemview.setOnClickListener { View -> val position: Int = adapterPosition
+                //  Toast.makeText(itemview.context,"successfull" +itemrating.text, Toast.LENGTH_LONG).show()
+                val intent = Intent(itemview.context, foods::class.java)
+                intent.putExtra("restaurant",itemnames.text)
+                intent.putExtra("position",adapterPosition)
 
-        )
-    }
-
-    override fun getItemCount(): Int = images.size
-
-
-
-    override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
-        val image = images[position]
-
-        Glide.with(holder.view.context)
-            .load(image.imagey)
-            .into(holder.view.image)
-    }
-
-    class ImageViewHolder(val view: View) : RecyclerView.ViewHolder(view)
-
-}*/
-
-class ImageAdapter(private val context : Context, private val images : List <Images>  ) : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
-    class ImageViewHolder(view: View) : RecyclerView.ViewHolder(view){
-        fun bindView(image: Images) {
-            img.setImageResource(image.imagey)
+                itemview.context.startActivity(intent)
 
 
+
+            }
         }
-        val img = itemView.findViewById<ImageView>(R.id.image)
+
+
+    }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.item_image,parent,false)
+        return ViewHolder(v)
+    }
+
+    override fun getItemCount(): Int {
+        return names.size
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.itemnames.text = names[position]
+        holder.itempic.setImageResource(pics[position])
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder =
-        ImageViewHolder(LayoutInflater.from(context).inflate(R.layout.item_image,parent,false))
 
 
-    override fun getItemCount(): Int = images.size
-
-
-
-    override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
-        holder.bindView(images[position])
-    }
 
 }

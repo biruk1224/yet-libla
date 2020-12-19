@@ -2,55 +2,101 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="3dp"
+    android:layout_marginTop="3dp"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
+
+<LinearLayout
+    android:id="@+id/name"
+    android:layout_width="match_parent"
+    android:background="#E0FFFF"
+    android:layout_height="280dp"
+    android:orientation="vertical"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+<TextView
+    android:id="@+id/rate"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:text="Donat"
+    android:textSize="25dp"
+    android:padding="5dp"
+    android:fontFamily="@font/cookie"/>
+
     <ImageView
-        android:id="@+id/image"
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        android:layout_height="200dp"
+        android:layout_height="190dp"
+        android:orientation="horizontal"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        app:srcCompat="@drawable/beya" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:orientation="horizontal"
+    app:layout_constraintTop_toBottomOf="@id/imageView">
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:gravity="center"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image"
-        android:orientation="horizontal">
-<TextView
-    android:id="@+id/rate"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:textColor="@color/colorAccent"
-    android:text="rating"/>
-        <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="20dp"
-            android:src="@drawable/ic_baseline_menu_book_24"/>
-        <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="50dp"
-            android:src="@drawable/ic_baseline_share_24"/>
-        <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="50dp"
-            android:src="@drawable/ic_baseline_location_on_24"
+        android:orientation="vertical">
+        <TextView
+          android:textColor="@color/colorPrimary"
+            android:layout_marginLeft="8dp"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="55birr"
+            android:textStyle="bold"
+            android:fontFamily="@font/cookie"
 
-           />
+            />
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginBottom="-26dp"
+            android:layout_marginLeft="4dp"
+            android:numStars="5"
+            android:stepSize="0.1"
+            android:rating="3.5"
+            android:scaleX=".5"
+            android:scaleY=".5"
+            android:transformPivotX="0dp"
+            android:transformPivotY="0dp"
+            android:isIndicator="true" />
+
+
 
     </LinearLayout>
 
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="12dp"
+        android:src="@drawable/ic_baseline_location_on_24"
+        />
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginRight="12dp"
+        android:src="@drawable/ic_baseline_menu_book_24"/>
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginRight="12dp"
 
+        android:src="@drawable/ic_baseline_share_24"/>
+
+</LinearLayout>
+
+
+</LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
