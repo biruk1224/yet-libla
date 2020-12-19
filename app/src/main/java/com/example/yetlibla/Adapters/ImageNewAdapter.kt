@@ -13,7 +13,7 @@ import com.example.yetlibla.R
 import com.example.yetlibla.ui.Single
 import com.example.yetlibla.ui.foods
 
-class ImagesAdapter(private var names:List<String>, private var pics:List<Int>, private var price:List<String>) : RecyclerView.Adapter<ImagesAdapter.ViewHolder>(){
+class ImageNewAdapter(private var names:List<String>, private var pics:List<Int>, private var price:List<String>) : RecyclerView.Adapter<ImageNewAdapter.ViewHolder>(){
     inner class ViewHolder(itemview:View) : RecyclerView.ViewHolder(itemview){
         var itemnames: TextView = itemview.findViewById(R.id.rate)
         var itempic : ImageView =itemview.findViewById(R.id.imageView)
@@ -21,7 +21,7 @@ class ImagesAdapter(private var names:List<String>, private var pics:List<Int>, 
         init {
             itemview.setOnClickListener { View -> val position: Int = adapterPosition
                 //  Toast.makeText(itemview.context,"successfull" +itemnames.text + position + adapterPosition, Toast.LENGTH_LONG).show()
-                val intent = Intent(itemview.context, Single::class.java)
+                val intent = Intent(itemview.context, foods::class.java)
                 intent.putExtra("name",itemnames.text)
                 intent.putExtra("position",position)
                 itemview.context.startActivity(intent)
@@ -40,7 +40,7 @@ class ImagesAdapter(private var names:List<String>, private var pics:List<Int>, 
 
     override fun getItemCount(): Int {
         return names.size
-        price.size
+
 
     }
 

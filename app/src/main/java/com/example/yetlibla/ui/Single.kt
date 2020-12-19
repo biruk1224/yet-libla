@@ -1,13 +1,9 @@
 package com.example.yetlibla.ui
 
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.yetlibla.Adapters.ImagesAdapter
 import com.example.yetlibla.R
-import kotlinx.android.synthetic.main.activity_foods.*
 import kotlinx.android.synthetic.main.activity_single.*
 
 class Single : AppCompatActivity() {

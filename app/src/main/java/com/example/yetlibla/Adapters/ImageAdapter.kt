@@ -19,7 +19,7 @@ class ImageAdapter(private var names:List<String>, private var pics:List<Int>) :
         init {
             itemview.setOnClickListener { View -> val position: Int = adapterPosition
                 //  Toast.makeText(itemview.context,"successfull" +itemrating.text, Toast.LENGTH_LONG).show()
-                val intent = Intent(itemview.context, Single::class.java)
+                val intent = Intent(itemview.context, foods::class.java)
                 intent.putExtra("restaurant",itemnames.text)
                 intent.putExtra("position",adapterPosition)
 

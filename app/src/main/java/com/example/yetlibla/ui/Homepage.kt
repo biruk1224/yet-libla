@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 
-import com.example.yetlibla.Adapters.ImagesAdapter
+import com.example.yetlibla.Adapters.ImageNewAdapter
 import com.example.yetlibla.Network.Imagesapi
 import com.example.yetlibla.R
 import com.example.yetlibla.models.Images
@@ -35,7 +35,7 @@ class Homepage : AppCompatActivity() {
         posttolist()
      //   val recyclerView = findViewById<RecyclerView>(R.id.list)
         list.layoutManager = LinearLayoutManager(this)
-        list.adapter = ImagesAdapter(names,pics,price)
+        list.adapter = ImageNewAdapter(names,pics,price)
        // recyclerView.setHasFixedSize(true)
       //  recyclerView.adapter = ImageAdapter(this,images)
 
@@ -49,7 +49,7 @@ class Homepage : AppCompatActivity() {
     }
     private fun posttolist(){
         addtolist("Beyayinet",R.drawable.beya,"35birr")
-        addtolist("Black foarst",R.drawable.donat,"65birr")
+        addtolist("pasta",R.drawable.pasta,"65birr")
         addtolist("Shiro",R.drawable.shiro,"40birr")
 
     }

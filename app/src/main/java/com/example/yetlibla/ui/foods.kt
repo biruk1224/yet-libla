@@ -3,8 +3,8 @@ package com.example.yetlibla.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.yetlibla.Adapters.ImageNewAdapter
 import com.example.yetlibla.Adapters.ImagesAdapter
 import com.example.yetlibla.R
 import kotlinx.android.synthetic.main.activity_foods.*
@@ -20,30 +20,32 @@ class foods : AppCompatActivity() {
     private  var price = mutableListOf<String>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        var intent = intent
-        restaurant = intent.getStringExtra("name")
-        position=intent.getIntExtra("position",0)
-        val restaurents = TextView(this)
+
 
   //   name[position!!] = RestuarensName[position!!]
       // Toast.makeText(this,"hey    " + position +restaurant, Toast.LENGTH_SHORT).show()
         setContentView(R.layout.activity_foods)
+        var intent = intent
+        restaurant = intent.getStringExtra("name")
+        position=intent.getIntExtra("position",0)
+        val res = findViewById<TextView>(R.id.restuarents)
+
 
         if(position == 0) {
             natan()
-            restaurents.text = "Natan's restaurant"
+            res.setText("Natan's restaurants")
 
 
         }
         if(position == 1) {
-            restaurents.text = "Bilo's cafe"
-         Bilos()
+            res.setText("Bilo's restaurants")
+            Bilos()
 
         }
 
 
        if(position == 2) {
-           restaurents.text = "Mama's chicken"
+           res.setText("Mama's chicken restaurants")
             mamaschicken()}
         /*
         if(RestuarensName == "MAMA'S Chicken") {
@@ -69,8 +71,8 @@ class foods : AppCompatActivity() {
     private fun Bilos(){
 
         addtolist("Donat",R.drawable.donat,"65Birr")
-        addtolist("Blackfoarst",R.drawable.cake3,"80birr")
-        addtolist("Macchiato",R.drawable.mac,"25birr")
+        addtolist("Blackfoarst",R.drawable.donat,"80birr")
+        addtolist("Cake",R.drawable.donat,"25birr")
     }
     private fun mamaschicken(){
         addtolist("Beyayinet",R.drawable.beya,"45birr")
