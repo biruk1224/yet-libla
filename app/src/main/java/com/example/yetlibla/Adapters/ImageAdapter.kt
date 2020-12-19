@@ -9,16 +9,17 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.yetlibla.R
 import com.example.yetlibla.ui.Location
+import com.example.yetlibla.ui.Single
 import com.example.yetlibla.ui.foods
 
 class ImageAdapter(private var names:List<String>, private var pics:List<Int>) : RecyclerView.Adapter<ImageAdapter.ViewHolder>(){
     inner class ViewHolder(itemview:View) : RecyclerView.ViewHolder(itemview){
         var itemnames: TextView = itemview.findViewById(R.id.rate)
-        var itempic : ImageView =itemview.findViewById(R.id.imageView)
+        var itempic : ImageView =itemview.findViewById(R.id.imageView1)
         init {
             itemview.setOnClickListener { View -> val position: Int = adapterPosition
                 //  Toast.makeText(itemview.context,"successfull" +itemrating.text, Toast.LENGTH_LONG).show()
-                val intent = Intent(itemview.context, foods::class.java)
+                val intent = Intent(itemview.context, Single::class.java)
                 intent.putExtra("restaurant",itemnames.text)
                 intent.putExtra("position",adapterPosition)
 
@@ -32,7 +33,7 @@ class ImageAdapter(private var names:List<String>, private var pics:List<Int>) :
 
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.item_image,parent,false)
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.item_image1,parent,false)
         return ViewHolder(v)
     }
 

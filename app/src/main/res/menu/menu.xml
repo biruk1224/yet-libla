@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nearmerestuarent"
+         android:icon="@drawable/ic_baseline"
+           android:title="Nearme "/>
+    <item android:id="@+id/nearmecafe"
+        android:icon="@drawable/ic_baseline"
+        android:title="Near me"/>
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/ic_baseline"
+        android:title="settings" />
+
+
+</menu>

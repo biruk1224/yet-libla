@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_baseline2"
+        android:enabled="true"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/nav_favourites"
+        android:icon="@drawable/ic_baseline"
+        android:enabled="true"
+        android:title="Settings" />
+
+    <item
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline1"
+        android:id="@+id/nav_settings"
+
+        android:title="Inbox" />
+
+</menu>

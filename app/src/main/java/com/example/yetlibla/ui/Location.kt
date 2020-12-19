@@ -67,6 +67,8 @@ class Location : AppCompatActivity(), OnMapReadyCallback {
         val l = LatLng(double,doubles)
         mMap.addMarker(MarkerOptions().position(l).title("Bilo's"))
         mMap.moveCamera(CameraUpdateFactory.newLatLng(l))
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(l, 15f))
+
 
     }
     private fun getLocationAccess() {
@@ -124,7 +126,7 @@ class Location : AppCompatActivity(), OnMapReadyCallback {
                         val markerOptions = MarkerOptions().position(latLng)
                         mMap.addMarker(MarkerOptions().position(latLng).title("You are here"))
 
-                     //   mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15f))
+                        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15f))
                     }
                 }
             }

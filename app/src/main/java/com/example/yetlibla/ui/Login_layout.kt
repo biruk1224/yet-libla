@@ -28,8 +28,8 @@ class Login_layout : AppCompatActivity() {
             register::class.java)) }
         btnLogin.setOnClickListener { login()
             progressBar.visibility = View.VISIBLE}
-      btnLoginGuest.setOnClickListener { startActivity(Intent(this,
-          search::class.java)) }
+        btnLoginGuest.setOnClickListener { startActivity(Intent(this,
+            Homepage::class.java)) }
     }
 
 
@@ -41,8 +41,8 @@ class Login_layout : AppCompatActivity() {
     }
 
     fun updateUI(currentUser: FirebaseUser?) {
-                if(currentUser!=null)
-                    startActivity(Intent(this, search::class.java))
+        if(currentUser!=null)
+            startActivity(Intent(this, Homepage::class.java))
     }
 
     private fun login(){
@@ -60,7 +60,7 @@ class Login_layout : AppCompatActivity() {
                 } else {
 
                     // If Login in fails, display a message to the user.
-                 //   Log.w(TAG, "createUserWithEmail:failure", task.exception)
+                    //   Log.w(TAG, "createUserWithEmail:failure", task.exception)
                     progressBar.visibility = View.INVISIBLE
                     Toast.makeText(baseContext, "Authentication failed." + task.exception ,
                         Toast.LENGTH_SHORT).show()

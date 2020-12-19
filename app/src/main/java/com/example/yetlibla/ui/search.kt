@@ -19,6 +19,7 @@ class search : AppCompatActivity() {
         setContentView(R.layout.activity_search)
         mamaschicken()
 
+
         lists.layoutManager = LinearLayoutManager(this)
         lists.adapter = ImageAdapter(names,pics)
 

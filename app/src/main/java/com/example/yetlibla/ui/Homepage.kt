@@ -1,15 +1,12 @@
 package com.example.yetlibla.ui
 
 import android.content.Intent
-import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 
-import com.example.yetlibla.Adapters.ImageAdapter
 import com.example.yetlibla.Adapters.ImagesAdapter
 import com.example.yetlibla.Network.Imagesapi
 import com.example.yetlibla.R
@@ -22,6 +19,7 @@ import retrofit2.Response
 class Homepage : AppCompatActivity() {
     private var names = mutableListOf<String>()
     private var pics = mutableListOf<Int>()
+    private var price= mutableListOf<String>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_homepage)
@@ -37,21 +35,22 @@ class Homepage : AppCompatActivity() {
         posttolist()
      //   val recyclerView = findViewById<RecyclerView>(R.id.list)
         list.layoutManager = LinearLayoutManager(this)
-        list.adapter = ImagesAdapter(names,pics)
+        list.adapter = ImagesAdapter(names,pics,price)
        // recyclerView.setHasFixedSize(true)
       //  recyclerView.adapter = ImageAdapter(this,images)
 
 
 
     }
-    private fun addtolist(namelist:String,picslist:Int){
+    private fun addtolist(namelist: String, picslist: Int, s: String){
         names.add(namelist)
         pics.add((picslist))
+        price.add(s)
     }
     private fun posttolist(){
-        addtolist("Beyayinet",R.drawable.beya)
-        addtolist("Black foarst",R.drawable.donat)
-        addtolist("Shiro",R.drawable.shiro)
+        addtolist("Beyayinet",R.drawable.beya,"35birr")
+        addtolist("Black foarst",R.drawable.donat,"65birr")
+        addtolist("Shiro",R.drawable.shiro,"40birr")
 
     }
     private fun fetchMovies(){
